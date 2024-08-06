@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(442, 656)
+        MainWindow.resize(442, 597)
         self.actionCalculate = QAction(MainWindow)
         self.actionCalculate.setObjectName(u"actionCalculate")
         self.actionGet_Graph = QAction(MainWindow)
@@ -41,14 +41,14 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 418, 267))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 418, 192))
         self.horizontalLayout = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.textEdit = QTextEdit(self.scrollAreaWidgetContents)
-        self.textEdit.setObjectName(u"textEdit")
+        self.text_historico = QTextEdit(self.scrollAreaWidgetContents)
+        self.text_historico.setObjectName(u"text_historico")
 
-        self.horizontalLayout.addWidget(self.textEdit)
+        self.horizontalLayout.addWidget(self.text_historico)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
@@ -64,6 +64,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.line_equacao = QLineEdit(self.frame_2)
         self.line_equacao.setObjectName(u"line_equacao")
+        font = QFont()
+        font.setPointSize(20)
+        self.line_equacao.setFont(font)
         self.line_equacao.setFrame(False)
 
         self.verticalLayout_2.addWidget(self.line_equacao)
@@ -162,12 +165,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.botao_ponto, 4, 0, 1, 1)
 
-        self.botao_zero = QPushButton(self.frame)
-        self.botao_zero.setObjectName(u"botao_zero")
-        sizePolicy.setHeightForWidth(self.botao_zero.sizePolicy().hasHeightForWidth())
-        self.botao_zero.setSizePolicy(sizePolicy)
+        self.botao_0 = QPushButton(self.frame)
+        self.botao_0.setObjectName(u"botao_0")
+        sizePolicy.setHeightForWidth(self.botao_0.sizePolicy().hasHeightForWidth())
+        self.botao_0.setSizePolicy(sizePolicy)
 
-        self.gridLayout.addWidget(self.botao_zero, 4, 1, 1, 1)
+        self.gridLayout.addWidget(self.botao_0, 4, 1, 1, 1)
 
         self.botao_3 = QPushButton(self.frame)
         self.botao_3.setObjectName(u"botao_3")
@@ -263,12 +266,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.frame)
 
+        self.verticalLayout.setStretch(2, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 442, 26))
         self.menu_clear_equation = QMenu(self.menubar)
         self.menu_clear_equation.setObjectName(u"menu_clear_equation")
+        self.menu_clear_equation.setMouseTracking(False)
+        self.menu_clear_equation.setAcceptDrops(False)
         self.menu_clear_history = QMenu(self.menubar)
         self.menu_clear_history.setObjectName(u"menu_clear_history")
         MainWindow.setMenuBar(self.menubar)
@@ -286,7 +292,7 @@ class Ui_MainWindow(object):
         self.actionCalculate.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
         self.actionGet_Graph.setText(QCoreApplication.translate("MainWindow", u"Graph", None))
         self.actionClear_History.setText(QCoreApplication.translate("MainWindow", u"Clear History", None))
-        self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.text_historico.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Fira Sans Semi-Light'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
@@ -296,25 +302,25 @@ class Ui_MainWindow(object):
         self.botao_6.setText(QCoreApplication.translate("MainWindow", u"6", None))
         self.botao_fecha_parenteses.setText(QCoreApplication.translate("MainWindow", u")", None))
         self.botao_8.setText(QCoreApplication.translate("MainWindow", u"8", None))
-        self.botao_pi.setText(QCoreApplication.translate("MainWindow", u"pi", None))
+        self.botao_pi.setText(QCoreApplication.translate("MainWindow", u"(pi)", None))
         self.botao_5.setText(QCoreApplication.translate("MainWindow", u"5", None))
-        self.botao_modulo.setText(QCoreApplication.translate("MainWindow", u"mod", None))
+        self.botao_modulo.setText(QCoreApplication.translate("MainWindow", u" mod ", None))
         self.botao_adicao.setText(QCoreApplication.translate("MainWindow", u"+", None))
         self.botao_ponto.setText(QCoreApplication.translate("MainWindow", u".", None))
-        self.botao_zero.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.botao_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.botao_3.setText(QCoreApplication.translate("MainWindow", u"3", None))
         self.botao_calcular.setText(QCoreApplication.translate("MainWindow", u"=", None))
         self.botao_percent.setText(QCoreApplication.translate("MainWindow", u"%", None))
         self.botao_1.setText(QCoreApplication.translate("MainWindow", u"1", None))
-        self.botao_raiz_quadrada.setText(QCoreApplication.translate("MainWindow", u"sqrt", None))
+        self.botao_raiz_quadrada.setText(QCoreApplication.translate("MainWindow", u"sqrt(", None))
         self.botao_2.setText(QCoreApplication.translate("MainWindow", u"2", None))
         self.botao_multiplica.setText(QCoreApplication.translate("MainWindow", u"x", None))
         self.botao_subtracao.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.botao_4.setText(QCoreApplication.translate("MainWindow", u"4", None))
-        self.botao_backspace.setText(QCoreApplication.translate("MainWindow", u"<", None))
+        self.botao_backspace.setText(QCoreApplication.translate("MainWindow", u"<--", None))
         self.botao_abre_parenteses.setText(QCoreApplication.translate("MainWindow", u"(", None))
         self.botao_9.setText(QCoreApplication.translate("MainWindow", u"9", None))
-        self.botao_quadrado.setText(QCoreApplication.translate("MainWindow", u"^2", None))
+        self.botao_quadrado.setText(QCoreApplication.translate("MainWindow", u"^(2)", None))
         self.menu_clear_equation.setTitle(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.menu_clear_history.setTitle(QCoreApplication.translate("MainWindow", u"Clear History", None))
     # retranslateUi

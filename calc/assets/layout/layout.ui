@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>442</width>
-    <height>656</height>
+    <height>597</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,1">
     <item>
      <widget class="QScrollArea" name="scrollArea">
       <property name="widgetResizable">
@@ -26,7 +26,7 @@
          <x>0</x>
          <y>0</y>
          <width>418</width>
-         <height>267</height>
+         <height>192</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout">
@@ -43,7 +43,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QTextEdit" name="textEdit">
+         <widget class="QTextEdit" name="text_historico">
           <property name="html">
            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -83,6 +83,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <item>
         <widget class="QLineEdit" name="line_equacao">
+         <property name="font">
+          <font>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
          <property name="frame">
           <bool>false</bool>
          </property>
@@ -199,7 +204,7 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="text">
-          <string>pi</string>
+          <string>(pi)</string>
          </property>
         </widget>
        </item>
@@ -225,7 +230,7 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="text">
-          <string>mod</string>
+          <string> mod </string>
          </property>
         </widget>
        </item>
@@ -256,7 +261,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QPushButton" name="botao_zero">
+        <widget class="QPushButton" name="botao_0">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -329,7 +334,7 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="text">
-          <string>sqrt</string>
+          <string>sqrt(</string>
          </property>
         </widget>
        </item>
@@ -394,7 +399,7 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="text">
-          <string>&lt;</string>
+          <string>&lt;--</string>
          </property>
         </widget>
        </item>
@@ -433,7 +438,7 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="text">
-          <string>^2</string>
+          <string>^(2)</string>
          </property>
         </widget>
        </item>
@@ -452,6 +457,12 @@ p, li { white-space: pre-wrap; }
     </rect>
    </property>
    <widget class="QMenu" name="menu_clear_equation">
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Clear</string>
     </property>

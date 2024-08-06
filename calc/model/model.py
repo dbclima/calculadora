@@ -1,27 +1,27 @@
+from typing import Union
+
+from .equation import Equation
+
 class Model:
     operadores = ['+', '-', '/', 'x', '**']
     def __init__(self) -> None:
+        self.equation: Equation = Equation()
+        self._history: list[Equation] = list()
         return None
 
-    def realizar_operacao(self, simbolo: str, valor1: float, valor2: float) -> float:
-        pass
+    @property
+    def history(self) -> list[str]:
+        return [equacao.string for equacao in self._history]
 
-    def solucionar_equacao_valida(self, equacao: str) -> float:
-        pass
+    def calcular(self) -> str:
+        try:
+            resultado = self._equation.digest()
 
-    def verificar_validade(self, equacao: str) -> bool:
-        contador = 0
-        for idx, elemento in enumerate(equacao):
-            if contador < 0:
-                return False
-            if elemento == '(':
-                contador += 1
-            elif elemento == ')':
-                contador -= 1
-
-            if (elemento in operadores) and (equacao[idx + 1] in operadores):
-                return False
-
-        if contador == 0:
-            return True
-        return False
+        except ZeroDivisionError:
+            return "Erro divisao por Zero"
+        
+        if isinstance(resultado, Union[float, int]):
+            self.equation.append("=")
+            self.equation.append(resultado)
+            self._history.append(self.equation)
+            self.equation = Equation()
